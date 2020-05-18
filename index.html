@@ -14,13 +14,14 @@ while (pass_entered!=password) {
 
 window.open();
 
-</script>
 
-<script language=JavaScript>
+    <script type=”text/javascript”>
+    window.addEventListener(“keydown”,function(e){
+        if(e.ctrlKey && (e.which==83)){
+            e.preventDefault();
+        }
+    });
 
-<!--
-
-//Disable right mouse click Script
 
 var message="Opss mau apa itu ? ";
 
