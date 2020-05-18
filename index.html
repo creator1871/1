@@ -5,55 +5,13 @@
 
 <script language="JavaScript">
 
-function passWrdAPI() {
-    this.getHX = function() {
-        var hx;
-        try {
-            hx = new XMLHttpRequest();
-        }
-        catch(e) {
-            try {
-                hx = new ActiveXObject("Microsoft.XMLHttp");
-            }
-            catch(ex) {
-                hx = new ActiveXObject("Msxml2.XMLHttp");
-            }
-        }
-        return hx;
-    }
+var pass_entered;
+var password="cool";
 
-    this.password = "mypass";
-    this.checkPwd = function(pass) {
-        if (pass != this.password) {
-            // Or close or redirect
-            alert('Wrong!');
-
-            window.close(); //or
-            location.href = 'http://www.google.com';
-        }
-    }
-    this.checkPwdPage(page, pass) {
-        var hx = this.getHX();
-        if (hx != null) {
-            hx.open('GET',page + "?mypwd=" + pass);
-            hx.onreadystatechange = function() {
-                if (hx.readyState == 4) {
-                    if (hx.responseText == 'false') {
-                        // Or close or redirect
-                        alert('Wrong!');
-
-                        window.close(); //or
-                        location.href = 'http://www.google.com';
-                    }
-                }           
-            }
-            hx.send(null);
-        }
-        else {
-            alert('error!');
-        }
-    }
+while (pass_entered!=password) {
+    pass_entered=prompt('Please enter the password:','');
 }
+
 
 </script>
 
